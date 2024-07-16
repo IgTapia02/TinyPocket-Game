@@ -53,7 +53,7 @@ public class Player_Movement : MonoBehaviour
         isDashing = true;
         if(Input.GetAxisRaw("Vertical")==0 && Input.GetAxisRaw("Horizontal") == 0)
         {
-            rb.velocity = new Vector2(0.71f * dashSpeed, 0.71f * dashSpeed);
+            rb.velocity = new Vector2(.65f * dashSpeed, .37f * dashSpeed);
         }
         else
         {
