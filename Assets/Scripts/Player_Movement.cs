@@ -36,7 +36,6 @@ public class Player_Movement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-        Debug.Log(movement);
     }
 
     private void FixedUpdate()
