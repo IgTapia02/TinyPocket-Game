@@ -7,6 +7,7 @@ public class Prop_Visibility : MonoBehaviour
 
     GameObject player;
     SpriteRenderer sr;
+    float ofset = -0.03f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,11 @@ public class Prop_Visibility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= player.transform.position.y && sr.sortingOrder == 0)
+        if (transform.position.y <= player.transform.position.y + ofset && sr.sortingOrder == 0)
         {
             ChangeLayer();
         }
-        if (transform.position.y > player.transform.position.y && sr.sortingOrder == 3)
+        if (transform.position.y > player.transform.position.y + ofset && sr.sortingOrder == 3)
         {
             ChangeLayer();
         }

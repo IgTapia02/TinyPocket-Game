@@ -7,6 +7,8 @@ TagManager:
   - Sword
   - Stick
   - Pot
+  - Key
+  - Potion
   layers:
   - Default
   - TransparentFX
