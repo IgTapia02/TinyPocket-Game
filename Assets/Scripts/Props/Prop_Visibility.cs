@@ -28,7 +28,6 @@ public class Prop_Visibility : MonoBehaviour
     }
     private void ChangeLayer()
     {
-        Debug.Log("hola");
         if (sr.sortingOrder == 0)
             sr.sortingOrder = 3;
         else if (sr.sortingOrder == 3)
