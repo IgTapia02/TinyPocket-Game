@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pot : MonoBehaviour
+public class Prop_Visibility : MonoBehaviour
 {
    
     GameObject player;
@@ -21,6 +21,6 @@ public class Pot : MonoBehaviour
     }
     private void ChangeLayer()
     {
-        this.gameObject.GetComponent()
+        this.gameObject.GetComponent();
     }
 }
