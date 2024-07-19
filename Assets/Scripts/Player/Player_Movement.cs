@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    Animator anim;
+
     Rigidbody2D rb;
     Vector2 movement;
     [SerializeField]
@@ -21,13 +23,13 @@ public class Player_Movement : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         canDash = true;
     }
 
     void Update()
     {
-
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(moveX, moveY).normalized;
@@ -44,11 +46,15 @@ public class Player_Movement : MonoBehaviour
             return;
 
         rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
+
+        anim.SetFloat("vely", rb.velocity.y);
+        anim.SetFloat("velx", rb.velocity.x);
     }
 
     private IEnumerator Dash()
     {
         canDash = false;
+        anim.SetTrigger("Dash");
         isDashing = true;
         if(Input.GetAxisRaw("Vertical")==0 && Input.GetAxisRaw("Horizontal") == 0)
         {
