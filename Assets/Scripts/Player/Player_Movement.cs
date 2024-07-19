@@ -54,6 +54,7 @@ public class Player_Movement : MonoBehaviour
     private IEnumerator Dash()
     {
         canDash = false;
+        anim.SetTrigger("Dash");
         isDashing = true;
         if(Input.GetAxisRaw("Vertical")==0 && Input.GetAxisRaw("Horizontal") == 0)
         {
