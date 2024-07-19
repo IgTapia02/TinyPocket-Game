@@ -49,6 +49,39 @@ public class Player_Movement : MonoBehaviour
 
         anim.SetFloat("vely", rb.velocity.y);
         anim.SetFloat("velx", rb.velocity.x);
+        anim.SetFloat("InputY", movement.y);
+        anim.SetFloat("InputX", movement.x);
+
+        if(movement.x > 0)
+        {
+            anim.SetBool("Input_Rigth", true);
+            anim.SetBool("Input_Left", false);
+        }
+        else if(movement.x < 0)
+        {
+            anim.SetBool("Input_Left", true);
+            anim.SetBool("Input_Rigth", false);
+        }else if(movement.x == 0)
+        {
+            anim.SetBool("Input_Left", false);
+            anim.SetBool("Input_Rigth", false);
+        }
+        if(movement.y > 0) 
+        {
+            anim.SetBool("Input_Top", true);
+            anim.SetBool("Input_Bottom", false);
+        }
+        else if (movement.y < 0)
+        {
+            anim.SetBool("Input_Bottom", true);
+            anim.SetBool("Input_Top", false);
+        }
+        else if(movement.y == 0)
+        {
+            anim.SetBool("Input_Bottom", false);
+            anim.SetBool("Input_Top", false);
+        }
+
     }
 
     private IEnumerator Dash()

@@ -19,6 +19,8 @@ public class Player_Actions : MonoBehaviour
     public List<GameObject> nearbyItems = new List<GameObject>();
     public Object actualObject = Object.None;
     [SerializeField] GameObject stick, potion, sword, pot, key;
+
+    [SerializeField] GameObject atack;
     void Start()
     {
         
@@ -97,7 +99,7 @@ public class Player_Actions : MonoBehaviour
         switch (actualObject)
         {
             case Object.Sword:
-                Debug.Log("ataque");
+                SwordAtack();
                 break;
             case Object.Key:
                 Debug.Log("abrir");
@@ -115,5 +117,13 @@ public class Player_Actions : MonoBehaviour
                 Debug.Log("nada");
                 break;
         }
+    }
+
+    void SwordAtack()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction);
+        Instantiate(atack, transform.position, rotation, transform);
     }
 }
