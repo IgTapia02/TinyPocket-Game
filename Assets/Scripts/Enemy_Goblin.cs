@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_Slime : MonoBehaviour
+public class Enemy_Goblin : MonoBehaviour
 {
     [SerializeField]
     Transform player;
@@ -21,8 +21,7 @@ public class Enemy_Slime : MonoBehaviour
     int currentPatrolIndex;
     float patrolWaitTimer;
 
-    bool facingRight = true;
-    SpriteRenderer spriteRenderer;
+    Animator anim;
 
     void Start()
     {
@@ -34,7 +33,7 @@ public class Enemy_Slime : MonoBehaviour
         currentPatrolIndex = 0;
         patrolWaitTimer = waitTime;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
     }
 
@@ -68,7 +67,30 @@ public class Enemy_Slime : MonoBehaviour
             }
         }
 
-        FlipSprite(agent.velocity.x);
+        if(agent.velocity.y > 0) 
+        {
+            anim.SetFloat("Y", 1);
+        }else if (agent.velocity.y < 0)
+        {
+            anim.SetFloat("Y", -1);
+
+        }else if(agent.velocity.y == 0)
+        {
+            anim.SetFloat("Y", 0);
+        }
+
+        if(agent.velocity.x > 0)
+        {
+            anim.SetFloat("X", 1);
+        }
+        else if (agent.velocity.x < 0)
+        {
+            anim.SetFloat("X", -1);
+        }
+        else if (agent.velocity.x == 0)
+        {
+            anim.SetFloat ("X", 0);
+        }
     }
 
     void Patrol()
@@ -88,20 +110,6 @@ public class Enemy_Slime : MonoBehaviour
                 agent.SetDestination(patrolPoints[currentPatrolIndex]);
                 patrolWaitTimer = waitTime;
             }
-        }
-    }
-
-    void FlipSprite(float moveDirection)
-    {
-        if (moveDirection > 0 && !facingRight)
-        {
-            facingRight = true;
-            spriteRenderer.flipX = true;
-        }
-        else if (moveDirection < 0 && facingRight)
-        {
-            facingRight = false;
-            spriteRenderer.flipX = false;
         }
     }
     void OnDrawGizmos()
