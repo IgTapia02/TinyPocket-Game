@@ -7,8 +7,7 @@ public class Sword_Atak : MonoBehaviour
 
     Collider2D collider_;
 
-    [SerializeField]
-    int damage = 0;
+    public int damage = 0;
     void Start()
     {
         collider_ = GetComponent<Collider2D>();

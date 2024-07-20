@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2238857437077054411}
   - component: {fileID: 2238857437077054408}
-  - component: {fileID: 2238857437077054410}
   - component: {fileID: 2238857437077054413}
   - component: {fileID: 2238857437077054412}
+  - component: {fileID: 2186665934410555924}
+  - component: {fileID: 2238857437077054410}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Stick
@@ -87,18 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2238857437077054410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238857437077054409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fe70aedb7d9fe46bf925c90470631c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2238857437077054413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,5 +124,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3ff1c87e82c26349a059b67df50dd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2186665934410555924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238857437077054409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821c072586833094bbb6c34724b2f11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &2238857437077054410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238857437077054409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fe70aedb7d9fe46bf925c90470631c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
