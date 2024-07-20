@@ -16,14 +16,27 @@ public class Player_Actions : MonoBehaviour
 
     public bool overObject;
     public GameObject Item;
+    GameObject CurrentItem;
     public List<GameObject> nearbyItems = new List<GameObject>();
     public Object actualObject = Object.None;
     [SerializeField] GameObject stick, potion, sword, pot, key;
 
     [SerializeField] GameObject atack;
+    [SerializeField] int maxHealth;
+    int health;
+    [SerializeField] HealthBar healthBar;
+
+    [Header("WeaponDamage")]
+    [SerializeField] int stickDamage;
+    [SerializeField] int swordDamage;
+    [Header("Potion")]
+    [SerializeField] int potionHealth;
+
     void Start()
     {
-        
+        health = maxHealth;
+        healthBar.ChangeMaxHealth(maxHealth);
+        healthBar.ChangeCurrentHealth(health);
     }
     void Update()
     {
@@ -40,7 +53,7 @@ public class Player_Actions : MonoBehaviour
         if (nearbyItems.Count > 0)
         {
             overObject = true;
-            Item = nearbyItems[nearbyItems.Count - 1]; // El último objeto agregado a la lista
+            Item = nearbyItems[nearbyItems.Count - 1];
         }
         else
         {
@@ -72,6 +85,8 @@ public class Player_Actions : MonoBehaviour
                     break;
             }
         }
+
+        CurrentItem = Item;
         switch (Item.tag)
         {
             case "Sword":
@@ -99,16 +114,17 @@ public class Player_Actions : MonoBehaviour
         switch (actualObject)
         {
             case Object.Sword:
-                SwordAtack();
+                SwordAtack(swordDamage);
                 break;
             case Object.Key:
+                Hit(2);
                 Debug.Log("abrir");
                 break;
             case Object.Stick:
-                Debug.Log("ataque");
+                SwordAtack(stickDamage);
                 break;
             case Object.Potion:
-                Debug.Log("gluglu");
+                PotionUse();
                 break;
             case Object.Pot:
                 Debug.Log("lanzo");
@@ -119,11 +135,38 @@ public class Player_Actions : MonoBehaviour
         }
     }
 
-    void SwordAtack()
+    void Hit(int damage)
+    {
+        health -= damage;
+
+        healthBar.ChangeCurrentHealth(health);
+
+        if(health <= 0)
+        {
+            //gameover
+        }
+    }
+    void SwordAtack(int damage)
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = mousePosition - transform.position;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction);
-        Instantiate(atack, transform.position, rotation, transform);
+
+        GameObject VFXAtack = Instantiate(atack, transform.position, rotation, transform);
+
+        VFXAtack.GetComponent<Sword_Atak>().damage = damage;
+        Debug.Log(VFXAtack.GetComponent<Sword_Atak>().damage);
+    }
+
+    void PotionUse()
+    {
+        Debug.Log("gluglu");
+        health += potionHealth;
+        healthBar.ChangeCurrentHealth(health);
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        actualObject = Object.None;
     }
 }
