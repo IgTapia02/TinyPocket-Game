@@ -10,21 +10,20 @@ public class Player_Actions : MonoBehaviour
         Stick,
         Sword,
         Potion,
-        Pot,
         Key
     }
 
     public bool overObject;
+    public bool overChest;
+    public bool overDoor;
     public GameObject Item;
-    GameObject CurrentItem;
     public List<GameObject> nearbyItems = new List<GameObject>();
     public Object actualObject = Object.None;
-    [SerializeField] GameObject stick, potion, sword, pot, key;
+    [SerializeField] GameObject stick, potion, sword, key;
 
     [SerializeField] GameObject atack;
-    [SerializeField] int maxHealth;
-    int health;
-    [SerializeField] HealthBar healthBar;
+    [SerializeField] public int maxHealth;
+    public int health;
 
     [Header("WeaponDamage")]
     [SerializeField] int stickDamage;
@@ -32,17 +31,24 @@ public class Player_Actions : MonoBehaviour
     [Header("Potion")]
     [SerializeField] int potionHealth;
 
+
     void Start()
     {
         health = maxHealth;
-        healthBar.ChangeMaxHealth(maxHealth);
-        healthBar.ChangeCurrentHealth(health);
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && Item != null && overObject)
+        if (Input.GetMouseButtonDown(1))
         {
-            pickUpItem();
+            if(Item != null && overObject)
+            {
+                pickUpItem();
+            }
+
+            if (overChest)
+            {
+                OpenChest();
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -80,13 +86,9 @@ public class Player_Actions : MonoBehaviour
                 case Object.Potion:
                     Instantiate(potion, transform.position, Quaternion.identity);
                     break;
-                case Object.Pot:
-                    Instantiate(pot, transform.position, Quaternion.identity);
-                    break;
             }
         }
 
-        CurrentItem = Item;
         switch (Item.tag)
         {
             case "Sword":
@@ -101,9 +103,6 @@ public class Player_Actions : MonoBehaviour
             case "Potion":
                 actualObject = Object.Potion;
                 break;
-            case "Pot":
-                actualObject = Object.Pot;
-                break;
         }
 
         Destroy(Item);
@@ -117,17 +116,17 @@ public class Player_Actions : MonoBehaviour
                 SwordAtack(swordDamage);
                 break;
             case Object.Key:
-                Hit(2);
-                Debug.Log("abrir");
+                if(overDoor)
+                {
+                    OpenDoor();
+                }
                 break;
             case Object.Stick:
                 SwordAtack(stickDamage);
                 break;
             case Object.Potion:
-                PotionUse();
-                break;
-            case Object.Pot:
-                Debug.Log("lanzo");
+                if(health<maxHealth)
+                    PotionUse();
                 break;
             case Object.None:
                 Debug.Log("nada");
@@ -138,8 +137,6 @@ public class Player_Actions : MonoBehaviour
     void Hit(int damage)
     {
         health -= damage;
-
-        healthBar.ChangeCurrentHealth(health);
 
         if(health <= 0)
         {
@@ -162,11 +159,42 @@ public class Player_Actions : MonoBehaviour
     {
         Debug.Log("gluglu");
         health += potionHealth;
-        healthBar.ChangeCurrentHealth(health);
         if (health > maxHealth)
         {
             health = maxHealth;
         }
         actualObject = Object.None;
+    }
+
+    void OpenChest()
+    {
+        var chest = GameObject.FindObjectOfType<Chest>();
+
+        if (chest != null)
+        {
+            
+            var chestInteraction = chest.GetComponent<Chest>();
+            if (chestInteraction != null)
+            {
+                chestInteraction.OpenChest();
+            }
+        }
+        overChest = false;
+    }
+
+    void OpenDoor()
+    {
+        var chest = GameObject.FindObjectOfType<Door>();
+
+        if (chest != null)
+        {
+
+            var chestInteraction = chest.GetComponent<Door>();
+            if (chestInteraction != null)
+            {
+                chestInteraction.Enter();
+            }
+        }
+        overChest = false;
     }
 }

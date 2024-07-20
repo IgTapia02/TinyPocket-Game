@@ -34,7 +34,7 @@ public class Sword_Atak : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit");
-            collision.gameObject.GetComponent<Enemy_Interactions>().Damage(damage);
+            collision.gameObject.GetComponent<Enemy_Interactions>().Damage(damage, GetComponentInParent<Transform>().position);
         }
 
         if(collision.gameObject.CompareTag("Pot"))

@@ -3,8 +3,7 @@ using UnityEngine.AI;
 
 public class Enemy_Slime : MonoBehaviour
 {
-    [SerializeField]
-    Transform player;
+    public Transform player;
     [SerializeField]
     float detectionRadius = 0.01f;
     [SerializeField]
@@ -26,6 +25,8 @@ public class Enemy_Slime : MonoBehaviour
 
     void Start()
     {
+        player = FindAnyObjectByType<Player_Actions>().transform;
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -93,12 +94,12 @@ public class Enemy_Slime : MonoBehaviour
 
     void FlipSprite(float moveDirection)
     {
-        if (moveDirection > 0 && !facingRight)
+        if (moveDirection > 0.1 && !facingRight)
         {
             facingRight = true;
             spriteRenderer.flipX = true;
         }
-        else if (moveDirection < 0 && facingRight)
+        else if (moveDirection < 0.1 && facingRight)
         {
             facingRight = false;
             spriteRenderer.flipX = false;
