@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1893427345357176419}
   - component: {fileID: 1893427345357176417}
   - component: {fileID: 1893427345357176416}
-  - component: {fileID: 1893427345357176423}
+  - component: {fileID: 1588830833820711608}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Pot
@@ -125,7 +125,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.2908327}
   m_EdgeRadius: 0
---- !u!114 &1893427345357176423
+--- !u!114 &1588830833820711608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,6 +134,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1893427345357176428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ff1c87e82c26349a059b67df50dd49, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ab4a620dac424c47a67a423b2f697bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropRate: 25
+  potion: {fileID: 4029902035338518898, guid: c9bc27b4efbec354987f1766ed42f9ff, type: 3}

@@ -36,5 +36,10 @@ public class Sword_Atak : MonoBehaviour
             Debug.Log("Hit");
             collision.gameObject.GetComponent<Enemy_Interactions>().Damage(damage);
         }
+
+        if(collision.gameObject.CompareTag("Pot"))
+        {
+            collision.gameObject.GetComponent<Pot_Interaction>().Destroy();
+        }
     }
 }
