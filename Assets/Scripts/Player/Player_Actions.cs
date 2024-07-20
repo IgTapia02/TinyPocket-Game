@@ -134,7 +134,7 @@ public class Player_Actions : MonoBehaviour
         }
     }
 
-    void Hit(int damage)
+    public void Hit(int damage)
     {
         health -= damage;
 

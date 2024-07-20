@@ -7,11 +7,15 @@ public class Enemy_Slime : MonoBehaviour
     [SerializeField]
     float detectionRadius = 0.01f;
     [SerializeField]
+    float atackRadius = 0.01f;
+    [SerializeField]
     bool patrol;
     [SerializeField]
     Vector3[] patrolPoints;
     [SerializeField]
     float waitTime = 2f;
+
+    bool atacking;
 
     Vector3 initialPosition;
     NavMeshAgent agent;
@@ -41,8 +45,11 @@ public class Enemy_Slime : MonoBehaviour
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
+        if (this.gameObject.GetComponent<Enemy_Interactions>().death || atacking)
+            agent.isStopped = true;
 
+        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
+            
         if (distanceToPlayer <= detectionRadius)
         {
             if (!isPlayerInRange)
@@ -67,6 +74,13 @@ public class Enemy_Slime : MonoBehaviour
             {
                 agent.SetDestination(initialPosition);
             }
+        }
+
+        if(distanceToPlayer <= atackRadius && !atacking)
+        {
+            atacking = true;
+            this.gameObject.GetComponent<Enemy_Interactions>().atack();
+
         }
 
         FlipSprite(agent.velocity.x);
@@ -109,5 +123,12 @@ public class Enemy_Slime : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, atackRadius);
+    }
+
+    public void EndAtack()
+    {
+        atacking = false;
     }
 }
