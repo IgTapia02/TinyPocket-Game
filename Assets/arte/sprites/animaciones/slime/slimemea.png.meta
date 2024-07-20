@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c353eb3cebdd1545b31da1a3bb02e23
+guid: 57a60bfab0db65f4bbe419aa6b723645
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondodesaparece_0
+      name: slimemea_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77fae151345eeea4180c302af13412d8
-      internalID: -2124975862
+      spriteID: 4c69ab8401ec60f4ab47b6e950238106
+      internalID: 589078867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_1
+      name: slimemea_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 32
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95cc6c3aacaeeb543b50703595f39cee
-      internalID: -389466199
+      spriteID: a53a3813f95b8f04fa0718a8f5c826d5
+      internalID: -1212477807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_2
+      name: slimemea_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 64
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65a6c8ecbbf07b146b28cea13c3e9add
-      internalID: 1251417320
+      spriteID: 7dd624f8a653ac1429c8aa2f0f8e2ecc
+      internalID: 1946520803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_3
+      name: slimemea_3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 96
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d116e37c85150c247afb53efd431e854
-      internalID: -692255025
+      spriteID: 20a164a456b21e24ab5f6300932f056e
+      internalID: 1942992396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_4
+      name: slimemea_4
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 128
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b22c8ef07f38f24280f4978b7fa1007
-      internalID: 633739896
+      spriteID: 9804b2bb00c2d534d85423df7381bff5
+      internalID: 1523693307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_5
+      name: slimemea_5
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 160
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d78f2560e411b5548b0880a0cbf0a9d2
-      internalID: -734084533
+      spriteID: e74a4464a8cec284b8cd7f42b3a949c3
+      internalID: 1418785456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_6
+      name: slimemea_6
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 192
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,92 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc2fd96a8de37d40b1616f39fdac35a
-      internalID: 472702333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_7
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69721018a2e0e9646990f41497e0793b
-      internalID: 1534764915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_8
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fcf545568c00ee4fafff5ead3ffe46a
-      internalID: -873815881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_9
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ef2697316602c84d8d548f4aeee42af
-      internalID: 1348536825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_10
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 746463404d717dd43bb376f8a4825fb9
-      internalID: -1603225670
+      spriteID: b1136346f7d28984ab0eabb7adfb7dc7
+      internalID: 631412232
       vertices: []
       indices: 
       edges: []
@@ -370,17 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fondodesaparece_0: -2124975862
-      fondodesaparece_1: -389466199
-      fondodesaparece_10: -1603225670
-      fondodesaparece_2: 1251417320
-      fondodesaparece_3: -692255025
-      fondodesaparece_4: 633739896
-      fondodesaparece_5: -734084533
-      fondodesaparece_6: 472702333
-      fondodesaparece_7: 1534764915
-      fondodesaparece_8: -873815881
-      fondodesaparece_9: 1348536825
+      slimemea_0: 589078867
+      slimemea_1: -1212477807
+      slimemea_2: 1946520803
+      slimemea_3: 1942992396
+      slimemea_4: 1523693307
+      slimemea_5: 1418785456
+      slimemea_6: 631412232
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

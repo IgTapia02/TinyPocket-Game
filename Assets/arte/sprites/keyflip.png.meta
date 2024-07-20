@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c353eb3cebdd1545b31da1a3bb02e23
+guid: 0652448cd6aab6d4b8f06a607484f622
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondodesaparece_0
+      name: keyflip_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77fae151345eeea4180c302af13412d8
-      internalID: -2124975862
+      spriteID: 7a13a35e98227ad418589f26c00ec1d0
+      internalID: 420712515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_1
+      name: keyflip_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 32
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95cc6c3aacaeeb543b50703595f39cee
-      internalID: -389466199
+      spriteID: d05525c362c757e4b9b54c50dfb1c9aa
+      internalID: 782578181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_2
+      name: keyflip_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 64
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65a6c8ecbbf07b146b28cea13c3e9add
-      internalID: 1251417320
+      spriteID: a246ea67514f2cb41841a127f028690c
+      internalID: 2116343117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_3
+      name: keyflip_3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 96
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d116e37c85150c247afb53efd431e854
-      internalID: -692255025
+      spriteID: 9c84da64c2d632442a87cce80f961f85
+      internalID: 435175627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_4
+      name: keyflip_4
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 128
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b22c8ef07f38f24280f4978b7fa1007
-      internalID: 633739896
+      spriteID: 625563522f259aa4ab8817934ad92b83
+      internalID: -1162592646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_5
+      name: keyflip_5
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 160
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d78f2560e411b5548b0880a0cbf0a9d2
-      internalID: -734084533
+      spriteID: 7365131ba6cd06a4c95292dc50e75990
+      internalID: 1868765048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_6
+      name: keyflip_6
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 192
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc2fd96a8de37d40b1616f39fdac35a
-      internalID: 472702333
+      spriteID: 99bb439a43cb4144caa12dfe5bafb1d2
+      internalID: 863976296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondodesaparece_7
+      name: keyflip_7
       rect:
         serializedVersion: 2
-        x: 2240
+        x: 224
         y: 0
-        width: 320
-        height: 200
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,71 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69721018a2e0e9646990f41497e0793b
-      internalID: 1534764915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_8
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fcf545568c00ee4fafff5ead3ffe46a
-      internalID: -873815881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_9
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ef2697316602c84d8d548f4aeee42af
-      internalID: 1348536825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondodesaparece_10
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 320
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 746463404d717dd43bb376f8a4825fb9
-      internalID: -1603225670
+      spriteID: 4f7dc7d4a2ac1a64c84aae96fedf1b4b
+      internalID: 1761070557
       vertices: []
       indices: 
       edges: []
@@ -370,17 +307,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fondodesaparece_0: -2124975862
-      fondodesaparece_1: -389466199
-      fondodesaparece_10: -1603225670
-      fondodesaparece_2: 1251417320
-      fondodesaparece_3: -692255025
-      fondodesaparece_4: 633739896
-      fondodesaparece_5: -734084533
-      fondodesaparece_6: 472702333
-      fondodesaparece_7: 1534764915
-      fondodesaparece_8: -873815881
-      fondodesaparece_9: 1348536825
+      keyflip_0: 420712515
+      keyflip_1: 782578181
+      keyflip_2: 2116343117
+      keyflip_3: 435175627
+      keyflip_4: -1162592646
+      keyflip_5: 1868765048
+      keyflip_6: 863976296
+      keyflip_7: 1761070557
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
