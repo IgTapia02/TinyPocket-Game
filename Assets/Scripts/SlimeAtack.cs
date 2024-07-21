@@ -11,7 +11,6 @@ public class SlimeAtack : MonoBehaviour
     void Start()
     {
         collider_ = GetComponent<Collider2D>();
-        collider_.enabled = false;
     }
 
     void ActiveCollider()
@@ -31,8 +30,10 @@ public class SlimeAtack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Debug.Log(collision.tag);
+        if (collision.CompareTag("Player"))
         {
+            Debug.Log("Golpe");
             collision.gameObject.GetComponent<Player_Actions>().Hit(damage);
         }
 

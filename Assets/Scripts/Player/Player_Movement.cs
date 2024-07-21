@@ -18,7 +18,7 @@ public class Player_Movement : MonoBehaviour
     float dashDuration;
     [SerializeField]
     float dashCooldown;
-    bool isDashing;
+    public bool isDashing;
     bool canDash;
 
     void Start()

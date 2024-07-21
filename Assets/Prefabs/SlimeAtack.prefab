@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6995993886447172974}
   - component: {fileID: 4708197341735229489}
   - component: {fileID: 5893592914141790045}
-  - component: {fileID: 6512805201410603285}
-  - component: {fileID: 820818526910708783}
+  - component: {fileID: 3100651911107204262}
+  - component: {fileID: 7244564990519226699}
   m_Layer: 0
   m_Name: SlimeAtack
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 899365983607840866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.444, y: 0.252, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.37, y: 1.37, z: 1.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 57589152, guid: fce4d081d0eab214b8868d4fd64340ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,20 +108,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &6512805201410603285
-PolygonCollider2D:
+--- !u!61 &3100651911107204262
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899365983607840866}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014691949, y: 0.0040069446}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,16 +131,10 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.1697633, y: 0.07}
-      - {x: -0.26460654, y: 0.024062691}
-      - {x: -0.2690596, y: -0.039296243}
-      - {x: -0.19382596, y: -0.08781191}
-      - {x: 0.19452979, y: -0.08781191}
-      - {x: 0.27944988, y: -0.065937296}
-      - {x: 0.26609093, y: 0.052188106}
---- !u!114 &820818526910708783
+  serializedVersion: 2
+  m_Size: {x: 0.48239493, y: 0.15115784}
+  m_EdgeRadius: 0
+--- !u!114 &7244564990519226699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 899365983607840866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3af11a5bbc0ad4ba34713239fedb5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 89ce7843be49a7f42aee918d11c2bdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1

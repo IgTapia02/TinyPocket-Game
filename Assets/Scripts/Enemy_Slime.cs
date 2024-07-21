@@ -46,44 +46,50 @@ public class Enemy_Slime : MonoBehaviour
     void Update()
     {
         if (this.gameObject.GetComponent<Enemy_Interactions>().death || atacking)
+        {
             agent.isStopped = true;
 
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-            
-        if (distanceToPlayer <= detectionRadius)
-        {
-            if (!isPlayerInRange)
-            {
-                isPlayerInRange = true;
-                agent.isStopped = false;
-            }
-            agent.SetDestination(player.position);
         }
         else
         {
-            if (isPlayerInRange)
-            {
-                isPlayerInRange = false;
-            }
 
-            if (patrol)
+            float distanceToPlayer = Vector3.Distance(player.position, transform.position);
+
+            if (distanceToPlayer <= detectionRadius)
             {
-                Patrol();
+                if (!isPlayerInRange)
+                {
+                    isPlayerInRange = true;
+                    agent.isStopped = false;
+                }
+                agent.SetDestination(player.position);
             }
             else
             {
-                agent.SetDestination(initialPosition);
+                if (isPlayerInRange)
+                {
+                    isPlayerInRange = false;
+                }
+
+                if (patrol)
+                {
+                    Patrol();
+                }
+                else
+                {
+                    agent.SetDestination(initialPosition);
+                }
             }
+
+            if (distanceToPlayer <= atackRadius && !atacking)
+            {
+                atacking = true;
+                this.gameObject.GetComponent<Enemy_Interactions>().Atack();
+
+            }
+
+            FlipSprite(agent.velocity.x);
         }
-
-        if(distanceToPlayer <= atackRadius && !atacking)
-        {
-            atacking = true;
-            this.gameObject.GetComponent<Enemy_Interactions>().atack();
-
-        }
-
-        FlipSprite(agent.velocity.x);
     }
 
     void Patrol()
@@ -130,5 +136,18 @@ public class Enemy_Slime : MonoBehaviour
     public void EndAtack()
     {
         atacking = false;
+        agent.isStopped = false;
+        if (isPlayerInRange)
+        {
+            agent.SetDestination(player.position);
+        }
+        else if (patrol)
+        {
+            Patrol();
+        }
+        else
+        {
+            agent.SetDestination(initialPosition);
+        }
     }
 }

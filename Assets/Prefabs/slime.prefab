@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   detectionRadius: 0.7
+  atackRadius: 0.36
   patrol: 0
   patrolPoints: []
   waitTime: 2
@@ -198,6 +199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealt: 2
   healt: 0
+  death: 0
+  atackOffset: 0
+  _atack: {fileID: 899365983607840866, guid: eae786618f8879746a6fe5916576b8d2, type: 3}
 --- !u!58 &3595627169820618048
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -69,9 +69,13 @@ public class Enemy_Interactions : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void atack()
+    public void Atack()
     {
-        animator.SetTrigger("Atack");
+        animator.SetTrigger("Atack");     
+    }
+
+    public void InsntantiateAtack()
+    {
         Instantiate(_atack, transform.position * (1 + atackOffset), transform.rotation, transform);
     }
 }

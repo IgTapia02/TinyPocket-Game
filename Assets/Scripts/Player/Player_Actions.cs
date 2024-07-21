@@ -31,10 +31,13 @@ public class Player_Actions : MonoBehaviour
     [Header("Potion")]
     [SerializeField] int potionHealth;
 
+    Animator anim;
+
 
     void Start()
     {
         health = maxHealth;
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -129,14 +132,17 @@ public class Player_Actions : MonoBehaviour
                     PotionUse();
                 break;
             case Object.None:
-                Debug.Log("nada");
                 break;
         }
     }
 
     public void Hit(int damage)
     {
+        if (this.gameObject.GetComponent<Player_Movement>().isDashing)
+            return;
+
         health -= damage;
+        anim.SetTrigger("damage");
 
         if(health <= 0)
         {
