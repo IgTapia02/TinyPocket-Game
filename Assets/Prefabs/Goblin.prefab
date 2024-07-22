@@ -141,12 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7124a61161ae3b04692a62f237e93fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealt: 100
+  dropRate: 100
+  sword: {fileID: 7272827506461927196, guid: 4e286a39b7e41644e8a27c22aab40901, type: 3}
+  maxHealt: 3
   healt: 0
   death: 0
   atackOffset: 0
   _atack: {fileID: 4160676101030141018, guid: e39d4ea48e956e94a9441cf7b3704506, type: 3}
-  player: {fileID: 552141060369384405, guid: a913ef424b20461449ddf2fb6da07dab, type: 3}
 --- !u!195 &2908860658066342349
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1893427345357176417}
   - component: {fileID: 1893427345357176416}
   - component: {fileID: 1588830833820711608}
+  - component: {fileID: 1893427347061901405}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Pot
@@ -139,3 +140,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropRate: 25
   potion: {fileID: 4029902035338518898, guid: c9bc27b4efbec354987f1766ed42f9ff, type: 3}
+--- !u!95 &1893427347061901405
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893427345357176428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f92e099c49e54c54dbd0c5c17fd04c64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

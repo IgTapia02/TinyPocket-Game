@@ -36,12 +36,15 @@ public class Player_Actions : MonoBehaviour
 
     Animator anim;
 
+    bool atacking;
+
 
     void Start()
     {
         object_ = 0;
         health = maxHealth;
         anim = GetComponent<Animator>();
+        atacking = false;
     }
     void Update()
     {
@@ -161,14 +164,10 @@ public class Player_Actions : MonoBehaviour
     }
     void SwordAtack(int damage)
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = mousePosition - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction);
+        if (atacking)
+            return;
 
-        GameObject VFXAtack = Instantiate(atack, transform.position, rotation, transform);
-
-        VFXAtack.GetComponent<Sword_Atak>().damage = damage;
-        Debug.Log(VFXAtack.GetComponent<Sword_Atak>().damage);
+        StartCoroutine(atackDelay(damage));
     }
 
     void PotionUse()
@@ -213,5 +212,21 @@ public class Player_Actions : MonoBehaviour
             }
         }
         overChest = false;
+    }
+
+    private IEnumerator atackDelay(int damage)
+    {
+        atacking = true;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -direction);
+
+        GameObject VFXAtack = Instantiate(atack, transform.position, rotation, transform);
+
+        VFXAtack.GetComponent<Sword_Atak>().damage = damage;
+        Debug.Log(VFXAtack.GetComponent<Sword_Atak>().damage);
+
+        yield return new WaitForSeconds(0.5f);
+        atacking = false;
     }
 }

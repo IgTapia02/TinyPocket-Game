@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Gobling_Interactions : MonoBehaviour
 {
+    [SerializeField] float dropRate;
+    [SerializeField] GameObject sword;
+
     [SerializeField]
     int maxHealt;
 
@@ -44,7 +47,7 @@ public class Gobling_Interactions : MonoBehaviour
         if (healt <= 0)
         {
             death = true;
-            animator.SetTrigger("Death");
+            Die();
         }
         else
         {
@@ -70,6 +73,13 @@ public class Gobling_Interactions : MonoBehaviour
 
     public void Die()
     {
+        float randomValue = Random.Range(0f, 100f);
+
+        if (randomValue <= dropRate)
+        {
+            Instantiate(sword, transform.position, Quaternion.identity);
+        }
+
         Destroy(this.gameObject);
     }
 
