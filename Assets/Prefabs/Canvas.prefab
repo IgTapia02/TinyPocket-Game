@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7392064476542719462}
   - component: {fileID: 7392064476542719456}
   - component: {fileID: 7392064476542719457}
+  - component: {fileID: 750680189}
   m_Layer: 5
   m_Name: obj
   m_TagString: Untagged
@@ -76,6 +77,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &750680189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392064476542719463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37f45651a1bf3c4a8c4b9239db1a758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  none: {fileID: -1434656307, guid: e2da41e95b9eb324898473153665ad36, type: 3}
+  stick: {fileID: 21300000, guid: cdc9d625c7346774db8a0b74cf1e5b06, type: 3}
+  sword: {fileID: 21300000, guid: 4aa1813a54ad2ea468151077417dade4, type: 3}
+  potion: {fileID: 21300000, guid: 103c06af77f2f9344a7837236c2391c8, type: 3}
+  key: {fileID: 21300000, guid: 2d35b3659698add429c41b5b6e345734, type: 3}
 --- !u!1 &7392064476741271378
 GameObject:
   m_ObjectHideFlags: 0

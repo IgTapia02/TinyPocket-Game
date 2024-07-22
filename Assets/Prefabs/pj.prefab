@@ -270,6 +270,7 @@ MonoBehaviour:
   dashSpeed: 3
   dashDuration: 0.1
   dashCooldown: 0.5
+  isDashing: 0
 --- !u!60 &552141060369384402
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -333,17 +334,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overObject: 0
+  overChest: 0
+  overDoor: 0
   Item: {fileID: 0}
   nearbyItems: []
   actualObject: 0
   stick: {fileID: 2238857437077054409, guid: 492f0168543142844a8c3f97e5b1268b, type: 3}
   potion: {fileID: 4029902035338518898, guid: c9bc27b4efbec354987f1766ed42f9ff, type: 3}
   sword: {fileID: 7272827506461927196, guid: 4e286a39b7e41644e8a27c22aab40901, type: 3}
-  pot: {fileID: 1893427345357176428, guid: 12623993ffdfc214f8763473eb7707ec, type: 3}
   key: {fileID: 1867413679247433694, guid: aa51a9a3814ea674d8a4b5c52913dd63, type: 3}
   atack: {fileID: 207643466937418717, guid: d195953b1fd15cf4bae0c9b1f9114bb9, type: 3}
   maxHealth: 10
-  healthBar: {fileID: 0}
+  health: 0
   stickDamage: 1
   swordDamage: 2
   potionHealth: 2
+  objectSprite: {fileID: 0}
