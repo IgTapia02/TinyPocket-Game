@@ -34,6 +34,8 @@ public class Player_Actions : MonoBehaviour
     [SerializeField] int potionHealth;
     [SerializeField] GameObject objectSprite;
 
+    GameManager gameManager;
+
     Animator anim;
 
     bool atacking;
@@ -45,6 +47,7 @@ public class Player_Actions : MonoBehaviour
         health = maxHealth;
         anim = GetComponent<Animator>();
         atacking = false;
+        gameManager = FindAnyObjectByType<GameManager>();
     }
     void Update()
     {
@@ -159,7 +162,7 @@ public class Player_Actions : MonoBehaviour
 
         if(health <= 0)
         {
-            //gameover
+            anim.SetTrigger("die");
         }
     }
     void SwordAtack(int damage)
@@ -228,5 +231,9 @@ public class Player_Actions : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         atacking = false;
+    }
+    void GameOver()
+    {
+        gameManager.GameOver();
     }
 }

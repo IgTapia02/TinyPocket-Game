@@ -30,6 +30,9 @@ public class Enemy_Interactions : MonoBehaviour
 
     public void Damage(int damage, Vector2 playerPosition)
     {
+        if (death)
+            return;
+
         animator.SetTrigger("Damage");
         
         if (healt > 0 && !hited)

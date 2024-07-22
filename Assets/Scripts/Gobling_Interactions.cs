@@ -37,6 +37,8 @@ public class Gobling_Interactions : MonoBehaviour
 
     public void Damage(int damage, Vector2 playerPosition)
     {
+        if (death)
+            return;
         animator.SetTrigger("Damage");
 
         if (healt > 0 && !hited)
@@ -85,15 +87,19 @@ public class Gobling_Interactions : MonoBehaviour
 
     public void Atack()
     {
-        // Calcular la dirección hacia el jugador
         Vector2 direction = (player.transform.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Crear una rotación basada en la dirección calculada
-        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle - 100));
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle -100));
 
-        // Instanciar el ataque en la dirección del jugador
-        Instantiate(_atack, transform.position, rotation, transform);
+        GameObject attackInstance = Instantiate(_atack, transform.position, rotation);
+
+        // Verificar si el collider se actualiza correctamente
+        BoxCollider2D attackCollider = attackInstance.GetComponent<BoxCollider2D>();
+        if (attackCollider != null)
+        {
+            attackCollider.transform.rotation = rotation;
+        }
     }
 
     public void InsntantiateAtack()

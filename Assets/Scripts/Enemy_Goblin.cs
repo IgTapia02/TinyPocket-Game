@@ -45,7 +45,7 @@ public class Enemy_Goblin : MonoBehaviour
 
     void Update()
     {
-        if (this.gameObject.GetComponent<Gobling_Interactions>().death || atacking)
+        if (this.gameObject.GetComponent<Gobling_Interactions>().death)
         {
             agent.isStopped = true;
 
@@ -83,6 +83,7 @@ public class Enemy_Goblin : MonoBehaviour
             if (distanceToPlayer <= atackRadius && !atacking)
             {
                 atacking = true;
+                agent.isStopped = true;
                 this.gameObject.GetComponent<Gobling_Interactions>().Atack();
                 StartCoroutine(EndAtack());
 
