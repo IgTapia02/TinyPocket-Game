@@ -162,6 +162,7 @@ public class Player_Actions : MonoBehaviour
 
         if(health <= 0)
         {
+            this.gameObject.GetComponent<Player_Movement>().dead = true;
             anim.SetTrigger("die");
         }
     }

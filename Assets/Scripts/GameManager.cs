@@ -5,14 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    void Start()
+    private static GameManager instance;
+    private string actualScene = "Mazmorra1";
+
+    void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
-    void Update()
-    {
-        
-    }
+
     public void ChangeLevel(int id)
     {
         switch (id)
@@ -20,25 +28,28 @@ public class GameManager : MonoBehaviour
             case 1:
                 Debug.Log("cambio de escena");
                 SceneManager.LoadScene("nivel_1");
-            break;
+                actualScene = "nivel_1";
+                break;
             case 2:
                 SceneManager.LoadScene("nivel_2");
+                actualScene = "nivel_2";
                 break;
             case 3:
                 SceneManager.LoadScene("nivel_3");
+                actualScene = "nivel_3";
                 break;
             case 4:
                 SceneManager.LoadScene("nivel_4");
+                actualScene = "nivel_4";
                 break;
             case 5:
                 SceneManager.LoadScene("final");
                 break;
-
         }
     }
 
     public void GameOver()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(actualScene);
     }
 }

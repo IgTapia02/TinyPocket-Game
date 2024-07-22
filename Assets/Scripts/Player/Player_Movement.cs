@@ -21,12 +21,14 @@ public class Player_Movement : MonoBehaviour
     public bool isDashing;
     bool canDash;
     public bool isHealing;
+    public bool dead;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         canDash = true;
+        dead = false;
     }
 
     void Update()
@@ -43,11 +45,13 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDashing)
+        if (isDashing || isHealing)
             return;
-
-        if (isHealing)
+        if (dead)
+        {
+            rb.velocity = Vector2.zero;
             return;
+        }
 
         rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
 

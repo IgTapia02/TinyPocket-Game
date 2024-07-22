@@ -92,7 +92,7 @@ public class Gobling_Interactions : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle -100));
 
-        GameObject attackInstance = Instantiate(_atack, transform.position, rotation);
+        GameObject attackInstance = Instantiate(_atack, transform.position, rotation, transform);
 
         // Verificar si el collider se actualiza correctamente
         BoxCollider2D attackCollider = attackInstance.GetComponent<BoxCollider2D>();
