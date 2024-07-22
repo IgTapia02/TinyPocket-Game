@@ -5,6 +5,7 @@ public class Door : MonoBehaviour
     public string playerTag = "Player";
 
     [SerializeField] GameObject fog;
+    [SerializeField] int ID;
 
     private void Start()
     {
