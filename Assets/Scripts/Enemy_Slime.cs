@@ -135,6 +135,7 @@ public class Enemy_Slime : MonoBehaviour
 
     public void EndAtack()
     {
+        Debug.Log("Hola");
         atacking = false;
         agent.isStopped = false;
         if (isPlayerInRange)

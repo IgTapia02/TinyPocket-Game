@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.AI;
 
 public class Enemy_Goblin : MonoBehaviour
@@ -8,11 +9,15 @@ public class Enemy_Goblin : MonoBehaviour
     [SerializeField]
     float detectionRadius = 0.01f;
     [SerializeField]
+    float atackRadius = 0.01f;
+    [SerializeField]
     bool patrol;
     [SerializeField]
     Vector3[] patrolPoints;
     [SerializeField]
     float waitTime = 2f;
+
+    bool atacking;
 
     Vector3 initialPosition;
     NavMeshAgent agent;
@@ -25,6 +30,7 @@ public class Enemy_Goblin : MonoBehaviour
 
     void Start()
     {
+        player = FindAnyObjectByType<Player_Actions>().transform;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -39,47 +45,65 @@ public class Enemy_Goblin : MonoBehaviour
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-
-        if (distanceToPlayer <= detectionRadius)
+        if (this.gameObject.GetComponent<Gobling_Interactions>().death || atacking)
         {
-            if (!isPlayerInRange)
-            {
-                isPlayerInRange = true;
-                agent.isStopped = false;
-            }
-            agent.SetDestination(player.position);
+            agent.isStopped = true;
+
         }
         else
         {
-            if (isPlayerInRange)
-            {
-                isPlayerInRange = false;
-            }
+            float distanceToPlayer = Vector3.Distance(player.position, transform.position);
 
-            if (patrol)
+            if (distanceToPlayer <= detectionRadius)
             {
-                Patrol();
+                if (!isPlayerInRange)
+                {
+                    isPlayerInRange = true;
+                    agent.isStopped = false;
+                }
+                agent.SetDestination(player.position);
             }
             else
             {
-                agent.SetDestination(initialPosition);
+                if (isPlayerInRange)
+                {
+                    isPlayerInRange = false;
+                }
+
+                if (patrol)
+                {
+                    Patrol();
+                }
+                else
+                {
+                    agent.SetDestination(initialPosition);
+                }
+            }
+
+            if (distanceToPlayer <= atackRadius && !atacking)
+            {
+                atacking = true;
+                this.gameObject.GetComponent<Gobling_Interactions>().Atack();
+                StartCoroutine(EndAtack());
+
             }
         }
 
-        if(agent.velocity.y > 0) 
+        if (agent.velocity.y > 0)
         {
             anim.SetFloat("Y", 1);
-        }else if (agent.velocity.y < 0)
+        }
+        else if (agent.velocity.y < 0)
         {
             anim.SetFloat("Y", -1);
 
-        }else if(agent.velocity.y == 0)
+        }
+        else if (agent.velocity.y == 0)
         {
             anim.SetFloat("Y", 0);
         }
 
-        if(agent.velocity.x > 0)
+        if (agent.velocity.x > 0)
         {
             anim.SetFloat("X", 1);
         }
@@ -89,8 +113,10 @@ public class Enemy_Goblin : MonoBehaviour
         }
         else if (agent.velocity.x == 0)
         {
-            anim.SetFloat ("X", 0);
+            anim.SetFloat("X", 0);
         }
+
+
     }
 
     void Patrol()
@@ -116,5 +142,29 @@ public class Enemy_Goblin : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, atackRadius);
     }
+
+    private IEnumerator EndAtack()
+    {
+        yield return new WaitForSeconds(3);
+        atacking = false;
+        agent.isStopped = false;
+
+        if (isPlayerInRange)
+        {
+            agent.SetDestination(player.position);
+        }
+        else if (patrol)
+        {
+            Patrol();
+        }
+        else
+        {
+            agent.SetDestination(initialPosition);
+
+        }
+    }
+
 }

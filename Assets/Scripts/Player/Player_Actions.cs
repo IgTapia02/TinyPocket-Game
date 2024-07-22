@@ -173,6 +173,7 @@ public class Player_Actions : MonoBehaviour
 
     void PotionUse()
     {
+        StartCoroutine(this.gameObject.GetComponent<Player_Movement>().healing());
         object_ = 0;
         health += potionHealth;
         if (health > maxHealth)

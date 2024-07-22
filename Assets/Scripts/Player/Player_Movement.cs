@@ -20,6 +20,7 @@ public class Player_Movement : MonoBehaviour
     float dashCooldown;
     public bool isDashing;
     bool canDash;
+    public bool isHealing;
 
     void Start()
     {
@@ -43,6 +44,9 @@ public class Player_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         if (isDashing)
+            return;
+
+        if (isHealing)
             return;
 
         rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
@@ -103,5 +107,16 @@ public class Player_Movement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public IEnumerator healing()
+    {
+        rb.velocity = Vector2.zero;
+        anim.SetTrigger("curar");
+        isHealing = true;
+        
+        yield return new WaitForSeconds(1);
+        isHealing = false;
+
     }
 }
