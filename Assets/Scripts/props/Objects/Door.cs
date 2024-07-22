@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -7,8 +8,11 @@ public class Door : MonoBehaviour
     [SerializeField] GameObject fog;
     [SerializeField] int ID;
 
+    GameObject gameManager_;
+
     private void Start()
     {
+        gameManager_ = FindAnyObjectByType<GameManager>().gameObject;
     }
 
 
@@ -31,6 +35,15 @@ public class Door : MonoBehaviour
     public void Enter()
     {
         fog.GetComponent<Fog>().CloseFog();
+        StartCoroutine(Sceene());
+    }
+
+    private IEnumerator Sceene()
+    {
+
+        yield return new WaitForSeconds(2);
+
+        gameManager_.GetComponent<GameManager>().ChangeLevel(ID);
     }
 
 }

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         switch (id)
         {
             case 1:
+                Debug.Log("cambio de escena");
                 SceneManager.LoadScene("nivel_1");
             break;
             case 2:

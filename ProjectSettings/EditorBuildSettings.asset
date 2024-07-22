@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/nivel_1.unity
+    guid: 5abbe0473400ad54fb78a958191e1482
+  - enabled: 1
+    path: Assets/Scenes/Mazmorra1.unity
+    guid: a97ef71164a52f94bbba78b4f479adc4
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 408e869e64d77004288213bcac9ee53b
+  - enabled: 1
+    path: Assets/Scenes/nivel_2.unity
+    guid: b825221033803004891de3b4d89b243f
+  - enabled: 1
+    path: Assets/Scenes/nivel_3.unity
+    guid: 00a02acb0f5464d45820a80b4fe7fe64
   m_configObjects: {}

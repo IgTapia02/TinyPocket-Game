@@ -26,4 +26,6 @@ public class Fog : MonoBehaviour
     {
         animator.SetTrigger("Close");
     }
+
+    
 }
