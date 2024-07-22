@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 841cc02b40acc5c469f0b53ce2d22d2a
+guid: 039601eb3678131488f7074530c68e3d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,23 +113,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: navajazo_0
+      name: navajazo-export_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +125,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.8}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ad48d3b36deaa74ebdbce69c0fb06f9
-      internalID: -1077980340
+      spriteID: f588206840afff94984ca11777ba5e29
+      internalID: 1961503117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: navajazo_1
+      name: navajazo-export_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,20 +146,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.8}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b9ca05a21508b44a8dd3c17bc1335e4
-      internalID: -1894705954
+      spriteID: 9a9306ea4cb643a4b9b827e00ff8db58
+      internalID: -1996202690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: navajazo_2
+      name: navajazo-export_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,20 +167,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.8}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4cc573281e610c49924cad6791e1fa8
-      internalID: 1392465049
+      spriteID: 61c76d5babe8b8846b7af81f81d473ab
+      internalID: 1514851938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: navajazo_3
+      name: navajazo-export_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,20 +188,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.8}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dccad3c9158a504bbdf34bde6a261ec
-      internalID: 804484400
+      spriteID: 69a482c020dfd204b84ea2f7a5f039ec
+      internalID: -2016839455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: navajazo_4
+      name: navajazo-export_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,20 +209,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.8}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34deaa0ff8e67b54491bf46328d7e632
-      internalID: 2133921454
+      spriteID: 4a55d79564442884897340d95081247e
+      internalID: 1770533327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: navajazo_5
+      name: navajazo-export_5
       rect:
         serializedVersion: 2
         x: 320
@@ -242,14 +230,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.8}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 231d7c58e064e3c449448795d839b78a
-      internalID: 960732717
+      spriteID: 7674816a88bfc324f926ba110fa80c96
+      internalID: -2106543592
       vertices: []
       indices: 
       edges: []
@@ -265,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      navajazo_0: -1077980340
-      navajazo_1: -1894705954
-      navajazo_2: 1392465049
-      navajazo_3: 804484400
-      navajazo_4: 2133921454
-      navajazo_5: 960732717
+      navajazo-export_0: 1961503117
+      navajazo-export_1: -1996202690
+      navajazo-export_2: 1514851938
+      navajazo-export_3: -2016839455
+      navajazo-export_4: 1770533327
+      navajazo-export_5: -2106543592
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

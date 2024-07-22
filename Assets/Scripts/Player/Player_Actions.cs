@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Actions : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Player_Actions : MonoBehaviour
     public List<GameObject> nearbyItems = new List<GameObject>();
     public Object actualObject = Object.None;
     [SerializeField] GameObject stick, potion, sword, key;
+    int object_;
 
     [SerializeField] GameObject atack;
     [SerializeField] public int maxHealth;
@@ -30,17 +32,21 @@ public class Player_Actions : MonoBehaviour
     [SerializeField] int swordDamage;
     [Header("Potion")]
     [SerializeField] int potionHealth;
+    [SerializeField] GameObject objectSprite;
 
     Animator anim;
 
 
     void Start()
     {
+        object_ = 0;
         health = maxHealth;
         anim = GetComponent<Animator>();
     }
     void Update()
     {
+        objectSprite.GetComponent<ChangeSprite>().SwitchSprite(object_);
+
         if (Input.GetMouseButtonDown(1))
         {
             if(Item != null && overObject)
@@ -96,14 +102,18 @@ public class Player_Actions : MonoBehaviour
         {
             case "Sword":
                 actualObject = Object.Sword;
+                object_ = 1;
                 break;
             case "Key":
+                object_ = 3;
                 actualObject = Object.Key;
                 break;
             case "Stick":
+                object_ = 4;
                 actualObject = Object.Stick;
                 break;
             case "Potion":
+                object_ = 2;
                 actualObject = Object.Potion;
                 break;
         }
@@ -163,7 +173,7 @@ public class Player_Actions : MonoBehaviour
 
     void PotionUse()
     {
-        Debug.Log("gluglu");
+        object_ = 0;
         health += potionHealth;
         if (health > maxHealth)
         {
@@ -190,12 +200,12 @@ public class Player_Actions : MonoBehaviour
 
     void OpenDoor()
     {
-        var chest = GameObject.FindObjectOfType<Door>();
+        var door = GameObject.FindObjectOfType<Door>();
 
-        if (chest != null)
+        if (door != null)
         {
-
-            var chestInteraction = chest.GetComponent<Door>();
+            object_ = 0;
+            var chestInteraction = door.GetComponent<Door>();
             if (chestInteraction != null)
             {
                 chestInteraction.Enter();
