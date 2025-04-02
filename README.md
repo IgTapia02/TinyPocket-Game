@@ -9,4 +9,8 @@ The design and art implementation were done by both of us.
 
 ## Authors  
 - **Ignacio Tapia** – Programming  
-- **Mikel Julian** – Design & Art Implementation  
+- **Mikel Julian** – Design & Art Implementation
+
+---
+
+You can find the Scripts in Assets/Scripts
